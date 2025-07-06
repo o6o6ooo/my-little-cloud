@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Workflow from '@/components/Workflow';
 import Works from '@/components/Works';
 import Message from '@/components/Message';
+import Skills from '@/components/Skills';
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
         <Header />
         <Workflow />
         <Works />
-        <Message />        
+        <Message />
+        <Skills />     
       {/* …rest of page… */}
       </main>
     </>
