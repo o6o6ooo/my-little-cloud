@@ -5,6 +5,7 @@ import Works from '@/components/Works';
 import Message from '@/components/Message';
 import Skills from '@/components/Skills';
 import Faq from '@/components/Faq';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <Message />
         <Skills />  
         <Faq />   
+        <Contact />
       {/* …rest of page… */}
       </main>
     </>
