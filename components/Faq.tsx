@@ -29,7 +29,7 @@ export default function Faq() {
         setOpen((o) => (o === idx ? null : idx));
 
     return (
-        <section id="faq" className="my-12 mx-auto max-w-2xl px-4">
+        <section id="faq" className="my-32 mx-auto max-w-2xl px-4">
             {qas.map((item, idx) => (
                 <div
                     key={idx}
