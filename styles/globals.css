@@ -16,7 +16,7 @@
 }
 
 /* dark */
-html[data-theme='dark'] {
+html.dark {
   --bg: #1e2633;
   --card: #2a3140;
   --fg: #dce2ea;
