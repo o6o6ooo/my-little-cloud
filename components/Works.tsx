@@ -45,7 +45,7 @@ export default function Works() {
     };
 
     return (
-        <section id="works" className="mx-auto mt-12 max-w-6xl px-4">
+        <section id="works" className="mx-auto my-12 max-w-6xl px-4">
             {/* Grid 3-col, responsive gap */}
             <div className="grid grid-cols-3 gap-4 md:gap-12">
                 {works.map((work) => (
