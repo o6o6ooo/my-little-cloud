@@ -5,7 +5,9 @@ import Works from '@/components/Works';
 import Message from '@/components/Message';
 import Skills from '@/components/Skills';
 import Faq from '@/components/Faq';
+import ReviewBoard from '@/components/ReviewBoard';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -14,11 +16,17 @@ export default function Home() {
       <main>
         <Header />
         <Workflow />
-        <Works />
+        <section id="works">
+          <Works />
+        </section>
         <Message />
         <Skills />  
-        <Faq />   
-        <Contact />
+        <Faq />
+        <ReviewBoard />
+        <section id="contact">
+          <Contact />
+        </section>
+        <Footer />
       {/* …rest of page… */}
       </main>
     </>
