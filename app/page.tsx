@@ -14,11 +14,11 @@ export default function Home() {
       <NavBar />
       <main>
         <Header />
-        <Workflow />
         <section id="works">
           <Works />
         </section>
         <Message />
+        <Workflow />
         <Skills />  
         <Faq />
         <section id="contact">

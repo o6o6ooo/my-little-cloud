@@ -13,6 +13,8 @@
   --fg: #0a4a6e;
   --accent: #2a68b2;
   --lightblue: #a5c3de;
+  --stickernotes: #ebf5ff;
+  --stickernotes-border: #dbeafe;
 }
 
 /* dark */
@@ -22,6 +24,8 @@ html.dark {
   --fg: #dce2ea;
   --accent: #2a68b2;
   --lightblue: #a5c3de;
+  --stickernotes: #2a3140;
+  --stickernotes-border: #a5c3de;
 }
 
 /* ───────────────────────────────
