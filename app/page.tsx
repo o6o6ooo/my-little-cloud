@@ -14,9 +14,7 @@ export default function Home() {
       <NavBar />
       <main>
         <Header />
-        <section id="works">
-          <Works />
-        </section>
+        <Works />
         <Message />
         <Workflow />
         <Skills />  
