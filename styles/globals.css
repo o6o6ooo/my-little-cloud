@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@import "tailwindcss/preflight"
+@tailwind utilities;
+
+/* ───────────────────────────────
+   Design-token variables
+   ─────────────────────────────── */
+
+/* light (default) */
+:root {
+  --bg: #ffffff;
+  --card: #f5f5f5;
+  --fg: #0a4a6e;
+  --accent: #2a68b2;
+  --lightblue: #a5c3de;
+  --stickernotes: #ebf5ff;
+  --stickernotes-border: #dbeafe;
+}
+
+/* dark */
+html.dark {
+  --bg: #1e2633;
+  --card: #2a3140;
+  --fg: #dce2ea;
+  --accent: #2a68b2;
+  --lightblue: #a5c3de;
+  --stickernotes: #2a3140;
+  --stickernotes-border: #a5c3de;
+}
+
+/* ───────────────────────────────
+   Base element resets
+   ─────────────────────────────── */
+
+html,
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family:
+    ui-rounded,
+    "SF Pro Rounded",
+    "Inter Rounded",
+    "Nunito",
+    system-ui,
+    sans-serif;
+  /* optional smooth scroll */
+  scroll-behavior: smooth;
+}
+
+/* Example utility classes if必要
+   .btn-primary { @apply bg-[var(--accent)] text-white px-4 py-2 rounded; }
+*/
