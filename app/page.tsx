@@ -5,7 +5,6 @@ import Works from '@/components/Works';
 import Message from '@/components/Message';
 import Skills from '@/components/Skills';
 import Faq from '@/components/Faq';
-import ReviewBoard from '@/components/ReviewBoard';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -22,7 +21,6 @@ export default function Home() {
         <Message />
         <Skills />  
         <Faq />
-        <ReviewBoard />
         <section id="contact">
           <Contact />
         </section>
