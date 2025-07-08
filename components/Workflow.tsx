@@ -1,7 +1,9 @@
 'use client';
-import React from 'react';
+import { useEffect } from "react";
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 import FadeInSection from '@/components/FadeInSection';
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 function cn(...classes: (string | false | null | undefined)[]) {
     return classes.filter(Boolean).join(' ');
@@ -59,43 +61,66 @@ export default function Workflow() {
                 </section>
 
                 <div className="flex flex-wrap justify-center gap-6 max-w-screen-lg">
-                    {notes.map((note) => (
-                        <div key={note.id} className="relative">
+                    {notes.map((note, index) => {
+                        const controls = useAnimation();
+                        const [ref, inView] = useInView({
+                            triggerOnce: true,
+                            threshold: 0.2,
+                        });
 
-                            {/* Pin */}
-                            <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10">
-                                <div
-                                    className="w-3.5 h-3.5 rounded-full shadow-md relative"
-                                    style={{ backgroundColor: note.pinColor }}
-                                >
-                                    <div className="absolute top-[2px] left-[6px] w-[6px] h-[6px] bg-white rounded-full opacity-50" />
-                                </div>
-                            </div>
+                        useEffect(() => {
+                            if (inView) {
+                                controls.start({
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: {
+                                        delay: 0.2 + index * 0.2,
+                                        duration: 0.6,
+                                        ease: "easeOut",
+                                    },
+                                });
+                            }
+                        }, [inView, controls, index]);
 
-                            {/* Sticky Note */}
-                            <div
-                                className={cn(
-                                    'w-64 h-64 border-2 rounded-xl mx-4 p-4 pt-8 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 hover:rotate-0 duration-300',
-                                    note.color,
-                                    note.rotation
-                                )}
+                        return (
+                            <motion.div
+                                key={note.id}
+                                ref={ref}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={controls}
+                                className="relative"
                             >
+                                {/* Pin */}
+                                <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10">
+                                    <div
+                                        className="w-3.5 h-3.5 rounded-full shadow-md relative"
+                                        style={{ backgroundColor: note.pinColor }}
+                                    >
+                                        <div className="absolute top-[2px] left-[6px] w-[6px] h-[6px] bg-white rounded-full opacity-50" />
+                                    </div>
+                                </div>
+
+                                {/* Sticky Note */}
                                 <div
                                     className={cn(
-                                        'text-xl font-bold text-[var(--accent)] opacity-80 mb-1',
+                                        'w-64 h-64 border-2 rounded-xl mx-4 p-4 pt-8 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 hover:rotate-0 duration-300',
+                                        note.color,
+                                        note.rotation
                                     )}
                                 >
-                                    {note.number}
+                                    <div className="text-xl font-bold text-[var(--accent)] opacity-80 mb-1">
+                                        {note.number}
+                                    </div>
+                                    <h3 className="text-base font-semibold text-[var(--fg)] mb-2">
+                                        {note.title}
+                                    </h3>
+                                    <p className="text-xs leading-relaxed text-[var(--fg)]">
+                                        {note.content}
+                                    </p>
                                 </div>
-                                <h3 className="text-base font-semibold text-[var(--fg)] mb-2">
-                                    {note.title}
-                                </h3>
-                                <p className="text-xs leading-relaxed text-[var(--fg)]">
-                                    {note.content}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
+                            </motion.div>
+                        )
+                    })}
                 </div>
             </div>
         </FadeInSection>
