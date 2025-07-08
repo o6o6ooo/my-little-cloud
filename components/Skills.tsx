@@ -47,7 +47,7 @@ export default function Skills() {
                 initial="hidden"
                 animate={controls}
             >
-                {skills.map((skill, i) => (
+                {skills.map((skill) => (
                     <motion.li
                         key={skill}
                         variants={itemVariants}

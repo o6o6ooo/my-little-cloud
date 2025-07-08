@@ -1,6 +1,4 @@
 'use client';
-
-import { workAsyncStorage } from 'next/dist/build/templates/app-route';
 import Image from 'next/image';
 import { useState } from 'react';
 import FadeInSection from '@/components/FadeInSection';
@@ -37,7 +35,7 @@ const works: Work[] = [
 ];
 
 export default function Works() {
-    const [selected, setSelected] = useState<Work | null>(null);
+    const [, setSelected] = useState<Work | null>(null);
 
     const openModal = (work: Work) => {
         setSelected(work);
