@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import FadeInSection from '@/components/FadeInSection';
 
 type QA = {
     q: string;
@@ -29,33 +30,35 @@ export default function Faq() {
         setOpen((o) => (o === idx ? null : idx));
 
     return (
-        <section id="faq" className="my-32 mx-auto max-w-2xl px-4">
-            {qas.map((item, idx) => (
-                <div
-                    key={idx}
-                    className="mb-4 rounded-xl bg-[var(--card)] shadow-sm overflow-hidden"
-                >
-                    {/* question row */}
-                    <button
-                        onClick={() => toggle(idx)}
-                        className="flex w-full items-center justify-between p-4 text-left"
+        <FadeInSection delay={0.2}>
+            <section id="faq" className="my-32 mx-auto max-w-2xl px-4">
+                {qas.map((item, idx) => (
+                    <div
+                        key={idx}
+                        className="mb-4 rounded-xl bg-[var(--card)] shadow-sm overflow-hidden"
                     >
-                        <span className="text-base font-semibold text-[var(--fg)]">
-                            {item.q}
-                        </span>
-                        <span className="text-[var(--fg)]">
-                            {open === idx ? '−' : '+'}
-                        </span>
-                    </button>
+                        {/* question row */}
+                        <button
+                            onClick={() => toggle(idx)}
+                            className="flex w-full items-center justify-between p-4 text-left"
+                        >
+                            <span className="text-base font-semibold text-[var(--fg)]">
+                                {item.q}
+                            </span>
+                            <span className="text-[var(--fg)]">
+                                {open === idx ? '−' : '+'}
+                            </span>
+                        </button>
 
-                    {/* answer */}
-                    {open === idx && (
-                        <div className="px-4 pb-4 text-sm text-[var(--fg)]">
-                            {item.a}
-                        </div>
-                    )}
-                </div>
-            ))}
-        </section>
+                        {/* answer */}
+                        {open === idx && (
+                            <div className="px-4 pb-4 text-sm text-[var(--fg)]">
+                                {item.a}
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </section>
+        </FadeInSection>
     );
 }

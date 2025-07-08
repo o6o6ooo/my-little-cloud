@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import FadeInSection from '@/components/FadeInSection';
 
 export default function Contact() {
     const [email, setEmail] = useState('');
@@ -45,43 +46,45 @@ export default function Contact() {
     }
 
     return (
-        <section id="contact" className="my-32 mx-auto max-w-2xl px-4">
-            <h2 className="mb-6 text-2xl font-bold text-[var(--fg)] text-center">
-                Contact&nbsp;me
-            </h2>
+        <FadeInSection delay={0.2}>
+            <section id="contact" className="my-32 mx-auto max-w-2xl px-4">
+                <h2 className="mb-6 text-2xl font-bold text-[var(--fg)] text-center">
+                    Contact&nbsp;me
+                </h2>
 
-            <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
-                {/* Email input */}
-                <input
-                    type="email"
-                    required
-                    name='email'
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                    className="w-full rounded-2xl shadow-md bg-[var(--card)] p-3 text-sm text-[var(--fg)] outline-none ring-1 ring-transparent focus:ring-[var(--accent)]"
-                />
+                <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
+                    {/* Email input */}
+                    <input
+                        type="email"
+                        required
+                        name='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
+                        className="w-full rounded-2xl shadow-md bg-[var(--card)] p-3 text-sm text-[var(--fg)] outline-none ring-1 ring-transparent focus:ring-[var(--accent)]"
+                    />
 
-                {/* Textarea */}
-                <textarea
-                    required
-                    name='message'
-                    rows={5}
-                    value={msg}
-                    onChange={(e) => setMsg(e.target.value)}
-                    placeholder="Ask me anything"
-                    className="w-full resize-none rounded-2xl shadow-md bg-[var(--card)] p-3 text-sm text-[var(--fg)] outline-none ring-1 ring-transparent focus:ring-[var(--accent)]"
-                />
+                    {/* Textarea */}
+                    <textarea
+                        required
+                        name='message'
+                        rows={5}
+                        value={msg}
+                        onChange={(e) => setMsg(e.target.value)}
+                        placeholder="Ask me anything"
+                        className="w-full resize-none rounded-2xl shadow-md bg-[var(--card)] p-3 text-sm text-[var(--fg)] outline-none ring-1 ring-transparent focus:ring-[var(--accent)]"
+                    />
 
-                {/* Submit button */}
-                <button
-                    type="submit"
-                    disabled={loading}
-                    className="self-center rounded-full bg-[var(--accent)] px-8 py-2 text-white text-sm font-medium hover:opacity-90 transition"
-                >
-                    {loading ? 'Sending…' : 'Contact'}
-                </button>
-            </form>
-        </section>
+                    {/* Submit button */}
+                    <button
+                        type="submit"
+                        disabled={loading}
+                        className="self-center rounded-full bg-[var(--accent)] px-8 py-2 text-white text-sm font-medium hover:opacity-90 transition"
+                    >
+                        {loading ? 'Sending…' : 'Contact'}
+                    </button>
+                </form>
+            </section>
+        </FadeInSection>
     );
 }

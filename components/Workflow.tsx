@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
+import FadeInSection from '@/components/FadeInSection';
 
 function cn(...classes: (string | false | null | undefined)[]) {
     return classes.filter(Boolean).join(' ');
@@ -41,61 +42,62 @@ const notes = [
 
 export default function Workflow() {
     return (
-        <div className="flex flex-col items-center my-20 px-4">
+        <FadeInSection delay={0.2}>
+            <div className="flex flex-col items-center my-20 px-4">
+                <section className="flex h-[120px] md:h-[160px] w-full items-center justify-center gap-4 md:gap-6">
+                    <span className="text-2xl md:text-xl font-medium text-[var(--fg)]">
+                        Design
+                    </span>
+                    <EllipsisHorizontalIcon className="size-8 text-[var(--fg)]" />
+                    <span className="text-2xl md:text-xl font-medium text-[var(--fg)]">
+                        Code
+                    </span>
+                    <EllipsisHorizontalIcon className="size-8 text-[var(--fg)]" />
+                    <span className="text-2xl md:text-xl font-medium text-[var(--fg)]">
+                        Care
+                    </span>
+                </section>
 
-            <section className="flex h-[120px] md:h-[160px] w-full items-center justify-center gap-4 md:gap-6">
-                <span className="text-2xl md:text-xl font-medium text-[var(--fg)]">
-                    Design
-                </span>
-                <EllipsisHorizontalIcon className="size-8 text-[var(--fg)]" />
-                <span className="text-2xl md:text-xl font-medium text-[var(--fg)]">
-                    Code
-                </span>
-                <EllipsisHorizontalIcon className="size-8 text-[var(--fg)]" />
-                <span className="text-2xl md:text-xl font-medium text-[var(--fg)]">
-                    Care
-                </span>
-            </section>
+                <div className="flex flex-wrap justify-center gap-6 max-w-screen-lg">
+                    {notes.map((note) => (
+                        <div key={note.id} className="relative">
 
-            <div className="flex flex-wrap justify-center gap-6 max-w-screen-lg">
-                {notes.map((note) => (
-                    <div key={note.id} className="relative">
-
-                        {/* Pin */}
-                        <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10">
-                            <div
-                                className="w-3.5 h-3.5 rounded-full shadow-md relative"
-                                style={{ backgroundColor: note.pinColor }}
-                            >
-                                <div className="absolute top-[2px] left-[6px] w-[6px] h-[6px] bg-white rounded-full opacity-50" />
+                            {/* Pin */}
+                            <div className="absolute top-3 left-1/2 -translate-x-1/2 z-10">
+                                <div
+                                    className="w-3.5 h-3.5 rounded-full shadow-md relative"
+                                    style={{ backgroundColor: note.pinColor }}
+                                >
+                                    <div className="absolute top-[2px] left-[6px] w-[6px] h-[6px] bg-white rounded-full opacity-50" />
+                                </div>
                             </div>
-                        </div>
 
-                        {/* Sticky Note */}
-                        <div
-                            className={cn(
-                                'w-64 h-64 border-2 rounded-xl mx-4 p-4 pt-8 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 hover:rotate-0 duration-300',
-                                note.color,
-                                note.rotation
-                            )}
-                        >
+                            {/* Sticky Note */}
                             <div
                                 className={cn(
-                                    'text-xl font-bold text-[var(--accent)] opacity-80 mb-1',
+                                    'w-64 h-64 border-2 rounded-xl mx-4 p-4 pt-8 shadow-md hover:shadow-lg transition-all hover:-translate-y-1 hover:rotate-0 duration-300',
+                                    note.color,
+                                    note.rotation
                                 )}
                             >
-                                {note.number}
+                                <div
+                                    className={cn(
+                                        'text-xl font-bold text-[var(--accent)] opacity-80 mb-1',
+                                    )}
+                                >
+                                    {note.number}
+                                </div>
+                                <h3 className="text-base font-semibold text-[var(--fg)] mb-2">
+                                    {note.title}
+                                </h3>
+                                <p className="text-xs leading-relaxed text-[var(--fg)]">
+                                    {note.content}
+                                </p>
                             </div>
-                            <h3 className="text-base font-semibold text-[var(--fg)] mb-2">
-                                {note.title}
-                            </h3>
-                            <p className="text-xs leading-relaxed text-[var(--fg)]">
-                                {note.content}
-                            </p>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+        </FadeInSection>
     );
 }
