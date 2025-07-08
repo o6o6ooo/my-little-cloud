@@ -19,16 +19,18 @@ export default function Header() {
 
             <div className="mt-4 flex gap-4">
                 <Link
-                    href="#works"
+                    href="#contact"
                     className="rounded-full bg-[var(--accent)] px-6 py-2 text-white text-sm font-medium hover:opacity-80 transition"
                 >
-                    Works
+                    Contact
                 </Link>
                 <Link
-                    href="#contact"
+                    href="https://drive.google.com/file/d/18rQRJTE19656FWDABg1AucY1qUUv0xB5/view?usp=sharing"
+                    target="_blank"
+                    rel="noreferrer"
                     className="rounded-full bg-[var(--lightblue)] px-6 py-2 text-white text-sm font-medium hover:opacity-80 transition"
                 >
-                    Contact
+                    Resume
                 </Link>
             </div>
         </section>
