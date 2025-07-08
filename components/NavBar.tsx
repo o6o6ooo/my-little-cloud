@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon, MoonIcon as MoonSolid, SunIcon as SunSolid } from
 import { useTheme } from '@/contexts/theme-context';
 
 const navLinks = [
-    { name: 'Work', href: '#work', external: false },
+    { name: 'Work', href: '#works', external: false },
     { name: 'Contact', href: '#contact', external: false },
     { name: 'Resume', href: 'https://docs.google.com/document/d/1rlWklWIPEzThVtJVrlJbLxnrvEA17bj0hHoDz2oCmtU/edit?tab=t.0#heading=h.lpar5z4w4pw7', newTab: true },
     { name: 'Github', href: 'https://github.com/o6o6ooo', newTab: true },
