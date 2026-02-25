@@ -34,7 +34,7 @@ export default function Home() {
           Sakura Wallace
         </h1>
         <p className="text-white/70 text-lg">
-          Hi, I'm Sakura a Full-Stack Engineer.
+          Hi, I&apos;m Sakura a Full-Stack Engineer.
         </p>
       </div>
 
