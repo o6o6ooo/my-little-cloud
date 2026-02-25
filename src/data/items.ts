@@ -74,5 +74,12 @@ export const items: BubbleItem[] = [
     type: "work",
     target: "_blank",
   },
+  {
+    id: "colour-bubbles",
+    name: "Colour Bubbles",
+    icon: "/icons/colour-bubbles.png",
+    type: "work",
+    target: "_blank",
+  },
 
   ];
