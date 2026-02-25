@@ -34,7 +34,7 @@ export default function Home() {
           Sakura Wallace
         </h1>
         <p className="text-white/70 text-sm">
-          Portfolio · UI inspired by IKEA bubbles
+          Hi, I'm Sakura a Full-Stack Engineer.
         </p>
       </div>
 

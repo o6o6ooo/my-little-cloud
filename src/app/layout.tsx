@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "IKEA Bubbles",
-  description: "Personal non-commercial UI experiment",
+  title: "Sakura Wallace",
+  description: "Hi, I'm Sakura a Full-Stack Engineer.",
   themeColor: "#0E3B73",
   icons: {
     icon: "/favicon.svg",
