@@ -30,10 +30,10 @@ export default function Home() {
       </div>
 
       <div className="pointer-events-none absolute left-6 top-6">
-        <h1 className="text-white text-xl font-semibold tracking-tight">
+        <h1 className="text-white text-2xl font-semibold tracking-tight">
           Sakura Wallace
         </h1>
-        <p className="text-white/70 text-sm">
+        <p className="text-white/70 text-lg">
           Hi, I'm Sakura a Full-Stack Engineer.
         </p>
       </div>

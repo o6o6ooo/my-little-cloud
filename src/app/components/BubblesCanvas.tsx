@@ -55,7 +55,7 @@ export default function BubblesCanvas({ items }: { items: BubbleItem[] }) {
       const cx = cw / 2;
       const cy = ch / 2;
 
-      const spread = Math.min(cw, ch) * 0.18;
+      const spread = Math.min(cw, ch) * 0.10;
       const baseR = 40;
 
       const visibleItems = items.filter((it) => !it.archived);
