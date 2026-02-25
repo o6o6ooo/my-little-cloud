@@ -77,6 +77,7 @@ export const items: BubbleItem[] = [
   {
     id: "colour-bubbles",
     name: "Colour Bubbles",
+    link: "https://colour-bubbles.vercel.app",
     icon: "/icons/colour-bubbles.png",
     type: "work",
     target: "_blank",
