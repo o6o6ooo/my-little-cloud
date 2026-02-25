@@ -38,9 +38,10 @@ export const items: BubbleItem[] = [
   {
     id: "contact",
     name: "Contact Me",
+    link: "mailto:066sakura@gmail.com",
     icon: "/icons/contact.png",
     type: "action",
-    target: "_blank",
+    target: "_self",
   },
   {
     id: "github",
