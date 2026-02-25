@@ -66,5 +66,12 @@ export const items: BubbleItem[] = [
     type: "work",
     target: "_blank",
   },
+  {
+    id: "cv",
+    name: "Get my CV in PDF",
+    icon: "/icons/cv.png",
+    type: "work",
+    target: "_blank",
+  },
 
   ];
