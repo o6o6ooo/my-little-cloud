@@ -20,22 +20,6 @@ export const items: BubbleItem[] = [
     target: "_blank",
   },
   {
-    id: "finu",
-    name: "Finu",
-    description: "To be implemented",
-    icon: "/icons/finu.jpg",
-    type: "work",
-    target: "_blank",
-  },
-  {
-    id: "snow",
-    name: "Snow",
-    description: "To be implemented",
-    icon: "/icons/snow.png",
-    type: "work",
-    target: "_blank",
-  },
-  {
     id: "contact",
     name: "Contact Me",
     link: "mailto:066sakura@gmail.com",
@@ -68,13 +52,6 @@ export const items: BubbleItem[] = [
     target: "_blank",
   },
   {
-    id: "cv",
-    name: "Get my CV in PDF",
-    icon: "/icons/cv.png",
-    type: "work",
-    target: "_blank",
-  },
-  {
     id: "colour-bubbles",
     name: "Colour Bubbles",
     link: "https://colour-bubbles.vercel.app",
@@ -82,5 +59,4 @@ export const items: BubbleItem[] = [
     type: "work",
     target: "_blank",
   },
-
-  ];
+];
