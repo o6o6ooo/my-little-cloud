@@ -39,7 +39,7 @@ export default function Home() {
       </div>
 
       <footer className="fixed bottom-6 w-full text-center text-xs text-white/50 pointer-events-none">
-        © {new Date().getFullYear()} Sakura Wallace · Portfolio · UI inspired by IKEA bubbles
+        © {new Date().getFullYear()} Sakura Wallace. All rights reserved.
       </footer>
     </main>
   );
