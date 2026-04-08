@@ -59,4 +59,12 @@ export const items: BubbleItem[] = [
     type: "work",
     target: "_blank",
   },
+  {
+    id: "nuzdex",
+    name: "Nuzdex",
+    link: "https://github.com/o6o6ooo/nuzdex",
+    icon: "/icons/nuzdex.png",
+    type: "work",
+    target: "_blank",
+  },
 ];
