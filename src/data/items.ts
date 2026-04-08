@@ -67,4 +67,11 @@ export const items: BubbleItem[] = [
     type: "work",
     target: "_blank",
   },
+  {
+    id: "pwf",
+    name: "Poker With Friends",
+    icon: "/icons/pwf.png",
+    type: "work",
+    target: "_blank",
+  },
 ];
